@@ -1,0 +1,38 @@
+.nx-textbox {
+  display: grid;
+  & > label {
+    color: currentColor;
+    text-align: left;
+    font-size: themeFontSize(small);
+    font-weight: themeFontWeight(bold);
+  }
+  & > input {
+    outline: transparent;
+    background: themeColor(white);
+    color: themeColor(darkText);
+    font-size: themeFontSize(medium);
+    border-radius: $theme-border-radius;
+    border: 0.1rem solid themeColor(white);
+    padding: themeSpacings(xsmall) themeSpacings(xsmall);
+    &::placeholder {
+      color: themeColor(darkText);
+      font-family: $theme-font-family;
+      font-weight: themeFontWeight(medium);
+    }
+    &[fullWidth] {
+      width: 100%;
+    }
+  
+    @each $name, $value in $colors {
+      &[type="#{$name}"] {
+        border: 0.1rem solid $value;
+      }
+    }
+  
+    @each $name, $value in $font-sizes {
+      &[size="#{$name}"] {
+        font-size: $value;
+      }
+    }
+  }
+}

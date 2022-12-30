@@ -1,0 +1,62 @@
+@mixin progress ($first-color) {
+  @if $first-color == primary {
+    border: none;
+    background: linear-gradient(90deg, themeColor(secondary)  var(--progress), themeColor(primary) 0%);
+  }
+}
+
+.nx-button {
+  flex: 1;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: themeColor(text);
+  font-size: themeFontSize(medium);
+  font-weight: themeFontWeight(bold);
+  border-radius: $theme-border-radius;
+  background-color: themeColor(primary);
+  transition: background-color 0.3s linear;
+  padding: themeSpacings(xxsmall) themeSpacings(medium);
+
+  @each $name, $value in $colors {
+    &[type="#{$name}"] {
+      background-color: $value;
+      border: 0.1rem solid $value;
+      &:hover {
+        filter: brightness(85%);
+      }
+      &:active {
+        filter: brightness(80%);
+      }
+    }
+
+    &[type="#{$name}"][outline] {
+      color: $value;
+      border: 0.1rem solid $value;
+      background-color: transparent;
+      font-weight: themeFontWeight(bold);
+    }
+  }
+
+  @each $name, $value in $font-sizes {
+    &[size="#{$name}"] {
+      font-size: $value;
+    }
+  }
+
+  &[fullWidth] {
+    width: 100%;
+  }
+  &[loading="true"],
+  &[disabled="true"] {
+    cursor: not-allowed;
+    color: themeColor(black);
+    background-color: themeColor(disabled);
+  }
+
+  &[progress] {
+    color: themeColor(text);
+    @include progress(primary);
+  }
+}

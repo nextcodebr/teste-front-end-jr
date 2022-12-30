@@ -1,0 +1,50 @@
+@import "./theme";
+:root {
+  --gtheme: dark;
+  --font-size: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $theme-font-family;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+html {
+  font-size: calc(62.5% * var(--font-size)) !important;
+}
+body {
+  font-family: $theme-font-family;
+  font-size: themeFontSize(medium);
+  transition: all 0.7s;
+}
+.logo {
+  width: 17rem;
+  max-height: 9.5rem;
+}
+.light {
+  $bg-theme-color: #f3f3f5;
+  $text-theme-color: #333;
+
+  color: $text-theme-color;
+  background-color: $bg-theme-color;
+  .logo {
+    filter: invert(100%);
+  }
+}
+.dark {
+  $bg-theme-color: #333;
+  $text-theme-color: #f3f3f5;
+
+  color: $text-theme-color;
+  background-color: $bg-theme-color;
+  .logo {
+    filter: none;
+  }
+}

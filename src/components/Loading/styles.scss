@@ -1,0 +1,26 @@
+.nx-loading {
+  animation: is-rotating 1s infinite;
+  border: 3px solid themeColor(disabled);
+  border-radius: 50%;
+  border-top-color: themeColor(primary);
+  height: themeFontSize(medium);
+  width: themeFontSize(medium);
+
+  @each $name, $value in $colors {
+    &[type="#{$name}"] {
+      background-color: $value;
+    }
+  }
+
+  @each $name, $value in $font-sizes {
+    &[size="#{$name}"] {
+      height: $value;
+      width: $value;
+    }
+  }
+  @keyframes is-rotating {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
