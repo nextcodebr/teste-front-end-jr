@@ -2,7 +2,7 @@
 
 ## MVP de cadastro de tópicos para discussão entre a equipe
 
-O objetivo deste teste de desenvolvedor front-end é ter todos os `testes automatizados` com o [Cypress](https://www.cypress.io/) passando com sucesso.
+O objetivo deste teste de desenvolvedor front-end é ter todos os `testes automatizados` com o [Cypress](https://www.cypress.io/) passando com `sucesso`.
 
 Com ele pretendemos avaliar algumas implementações básicas com programação javascript utilizando o framework `Vue.js 2`, além de conhecimentos em `CSS` e `HTML`.
 
@@ -16,14 +16,17 @@ Deixamos na pasta `prototype` um protótipo básico que pode ajudar a ter uma vi
 
 Dentro da pasta `src/views` tem a estrutura básica das duas telas iniciais do protótipo que você utilizará: `LoginView.vue` e `CadastrosView.vue`. Implemente tudo o que é pedido nos testes nelas.
 
+Você pode ver exatamente o que o teste está pedindo acessando a o arquivo `test.js` dentro da pasta `tests/e2e/specs`
+
 ### Diferenciais
 
 - A estilização do projeto fica por conta da sua `criatividade`. Focamos na implementação das funcionalidades e algumas cores da Nextcode, mas seria interessante ver um teste bem estilizado.
-- Você pode guardar/persistir os "tópicos para discussão" no `localstorage` do navegador ou até mesmo utilizar uma API fake junto com requisições em `axios` (precisará instalar a dependência) para simular uma integração entre front-end e back-end. Tem muitos exemplos de implementações com `axios` na internet e para criar uma API fake você pode utilizar o [MockAPI](https://mockapi.io)
+- Você pode guardar/persistir os "tópicos para discussão" no `localstorage` do navegador ou até mesmo utilizar uma API fake junto com requisições feitas com `axios` (precisará instalar a dependência) para simular uma integração entre front-end e back-end. Tem muitos exemplos de implementações com `axios` na internet e para criar uma API fake você pode utilizar o [MockAPI](https://mockapi.io)
 
 ## Instruções iniciais...
 
-Faça `fork`e depois o `clone` deste repositório para o seu computador
+Faça `fork`e depois o `clone` deste repositório para o seu computador.
+Crie uma `branch` nova.
 
 ### Instale as dependências:
 
@@ -38,16 +41,14 @@ Estes testes precisam passar todos com sucesso. Porém, se não conseguir, pode 
 
 Para executar:
 
-`yarn test:e2e`
-ou
 `npm run test:e2e`
+ou
+`yarn test:e2e`
 
 - Abrirá a janela do Cypress;
 - Escolha o navegador de teste e
-- Execute os testes, conforme é mostrado no `item 1` e `item 2` da imagem `/readme/1.png`
+- Execute os testes, conforme é mostrado no `item 1` e `item 2` da imagem `readme/1.png`
   ![Janela Cypress](/readme/1.png "Janela Cypress")
-
-Na pasta `prototype` estão os exemplos para guiá-lo.
 
 ### Ao finalizar...
 
