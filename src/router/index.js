@@ -10,6 +10,10 @@ const routes = [
     component: () => import('../views/LoginView.vue')
   },
   {
+    path: '/',
+    redirect: '/login'
+  },
+  {
     path: '/cadastros',
     name: 'cadastros',
     component: () => import('../views/CadastrosView.vue')
@@ -17,6 +21,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
