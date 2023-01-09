@@ -2,9 +2,10 @@
   display: grid;
   & > label {
     color: currentColor;
+    padding-top: 20px;
     text-align: left;
     font-size: themeFontSize(small);
-    font-weight: themeFontWeight(bold);
+    font-weight: themeFontWeight(regular);
   }
   & > input {
     outline: transparent;
