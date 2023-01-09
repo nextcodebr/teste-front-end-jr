@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     handleExcluir () {
-      this.$emit('excluir', this.titulo)
+      this.$emit('removerCard')
     }
   }
 }
