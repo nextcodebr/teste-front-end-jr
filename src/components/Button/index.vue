@@ -36,6 +36,7 @@ export default {
   },
   computed: {
     isDisabled () {
+      console.log(this.disabled)
       return this.disabled || this.loading
     }
   }

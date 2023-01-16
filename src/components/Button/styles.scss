@@ -13,11 +13,11 @@
   justify-content: center;
   color: themeColor(text);
   font-size: themeFontSize(medium);
-  font-weight: themeFontWeight(bold);
+  font-weight: themeFontWeight(light);
   border-radius: $theme-border-radius;
   background-color: themeColor(primary);
   transition: background-color 0.3s linear;
-  padding: themeSpacings(xxsmall) themeSpacings(medium);
+  padding: themeSpacings(xxsmall) themeSpacings(large);
 
   @each $name, $value in $colors {
     &[type="#{$name}"] {
