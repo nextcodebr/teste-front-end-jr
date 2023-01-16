@@ -14,11 +14,12 @@
     font-size: themeFontSize(medium);
     border-radius: $theme-border-radius;
     border: 0.1rem solid themeColor(white);
+    background-color: #f3f3f5;
     padding: themeSpacings(xsmall) themeSpacings(xsmall);
     &::placeholder {
       color: themeColor(darkText);
       font-family: $theme-font-family;
-      font-weight: themeFontWeight(medium);
+      font-weight: themeFontWeight(extraLight);
     }
     &[fullWidth] {
       width: 100%;
