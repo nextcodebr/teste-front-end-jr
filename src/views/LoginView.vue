@@ -1,17 +1,17 @@
 <template>
   <div class="login-view">
-    <div class="box-login">
-      <img src="../assets/nextcode.png" alt="Nextcode" />
+    <div class="box-login center">
+      <div class="logo center">
+        <img src="../assets/nextcode.png" alt="Nextcode" />
+      </div>
       <NxTextbox label="E-mail" v-model="email" placeholder="Digite seu email"/>
       <NxTextbox label="Senha" type="password" v-model="password" placeholder="Digite sua senha"/>
-      <NxButton @click="login">Login</NxButton>
+      <NxButton class="center" @click="login">Login</NxButton>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   components: {
     NxTextbox: () => import('@/components/Textbox'),
@@ -25,35 +25,38 @@ export default {
   },
   methods: {
     login () {
+      // armazenando na constante os dados do input
       const dataForm = { email: this.email, password: this.password }
-      console.log(dataForm)
-      const response = axios.post('http://localhost:8080/login', {
-        email: dataForm.email,
-        password: dataForm.password
-      })
-      if (response.status === 200) {
-        localStorage.setItem('user', response.data.user)
+      // validando se o e-mail e senha são válidos
+      if (dataForm.email === 'admin@nextcode.com.br' && dataForm.password === 'Next@123') {
+        localStorage.setItem('acesso', true)
+        window.location.href = 'http://localhost:8080/cadastros'
+      } else {
+        alert('Usuário ou senha incorretos')
       }
-      console.log(response)
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.login-view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.center{
+  margin: 0 auto;
 }
 
 .box-login {
   width: 400px;
   height: 400px;
-  padding: 1.8rem;
-  margin: 0 auto;
+  padding: themeSpacings(xsmall);
   background-color: themeColor(mainBg);
   color: white;
+  margin-top: 180px
+}
+.nx-button{
+  margin-top: 20px;
+  border: none;
 }
 
+.nx-button:hover {
+  background-color: #ff2698;
+}
 </style>
